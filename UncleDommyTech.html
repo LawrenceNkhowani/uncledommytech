@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Uncle Dommy Tech | Printing Services</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+     <!-- Network Connection Status Banner -->
+    <div id="network-status" class="network-banner" style="display: none;">
+        ⚡ You are currently offline. You can still calculate print estimates!
+    </div>
+    <!-- PWA Install Shortcut Button -->
+    <button type="button" id="pwa-install-btn" class="pwa-btn" style="display: none;" onclick="triggerPwaInstall()">
+        📲 Save Web App to Home Screen
+    </button>    
+    <body>
+        <!-- Floating Back to Top Button -->
+    <button type="button" id="backToTopBtn" onclick="scrollToTop()">⬆ Top</button>
+
+<!-- Header / Navbar-->
+ 
+ <header>
+    <!-- HTML Image Tag -->
+     <!-- Clean Header with Logo Only -->
+        <header class="card header-section">
+            <div class="logo-container">
+                <img src="logo.png.jpg" alt="Uncle Dommy Tech Logo" class="header-logo-only">
+            </div>
+            <p class="tagline">Fast, Reliable & Student-Friendly Printing Solutions — Room L134</p>
+            
+            <div class="header-controls">
+            </div>
+        </header>
+    <!-- Live Campus Business Status Badge -->
+     <!-- Dark Mode Toggle Button -->
+        <button type="button" id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+        <div id="business-status" class="status-badge">
+            <span id="status-dot" class="dot"></span>
+            <span id="status-text">Checking hours...</span>
+        </div>
+ </header>
+ <!-- Special Offerings Banner-->
+  <Section Class="offers-section">
+    
+    <h2> Special Campus Offers</h2>
+    <div class="offer-card">
+        <!-- How It Works Section -->
+    <section class="card how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Estimate & Send</h3>
+                <p>Use the estimator below to calculate your price, then tap the WhatsApp button to send your file.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>We Process</h3>
+                <p>We handle high-quality A4 printing, comb binding, or document formatting immediately.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Pick Up</h3>
+                <p>Collect your neat, ready document directly on campus at Room L134 or arrange delivery!</p>
+            </div>
+        </div>
+    </section>
+        <h3>Free Binding</h3>
+        <p>Get free spiral binding on all project printnts over 100 pages.</p>
+        </div>
+    </div>
+  </Section>
+
+  <!-- Price List Section-->
+   <section class="pricing-section">
+    <h2> Pricing and Services</h2>
+    <!-- Visual Services Showcase -->
+     
+    <section class="card">
+        <h2>🎨 Visual Services Showcase</h2>
+        <p>Explore our popular on-campus offerings at Room L134:</p>
+        
+        <div class="visual-services-grid">
+            <!-- Card 1: Printing -->
+            <div class="service-visual-card" onclick="applyPreset('1.5', 10, false)">
+                <div class="service-icon-circle">🖨️</div>
+                <h3>B&W / Color Print</h3>
+                <p>Standard A4 documents & vibrant reports</p>
+                <span class="service-price-tag">From K1.50</span>
+            </div>
+
+            <!-- Card 2: Photos -->
+            <div class="service-visual-card" onclick="applyPreset('4.0', 1, false)">
+                <div class="service-icon-circle">🖼️</div>
+                <h3>Photo Printing</h3>
+                <p>Glossy, high-res pictures & student IDs</p>
+                <span class="service-price-tag">K4.00 / copy</span>
+            </div>
+
+            <!-- Card 3: Laminating -->
+            <div class="service-visual-card" onclick="applyPreset('10.0', 1, false)">
+                <div class="service-icon-circle">🛡️</div>
+                <h3>Laminating</h3>
+                <p>Protect certificates & crucial documents</p>
+                <span class="service-price-tag">K10.00 / pc</span>
+            </div>
+
+            <!-- Card 4: Binding -->
+            <div class="service-visual-card" onclick="applyPreset('1.5', 50, true)">
+                <div class="service-icon-circle">📚</div>
+                <h3>Comb Binding</h3>
+                <p>Neat finishing for final year projects</p>
+                <span class="service-price-tag">K15.00</span>
+            </div>
+        </div>
+    </section>
+    <!-- Service Search Filter -->
+        <div class="search-box">
+            <input type="text" id="service-search" placeholder="🔍 Search services (e.g. binding, color, scan)..." onkeyup="filterServices()">
+        </div>
+    <table class="price-table">
+        <thread>
+            <tr>
+                <th>service</th>
+                <th>Details</th>
+                <th>Price</th>
+            </tr>
+        </thread>
+        <tbody>
+            
+           <tr>
+    <td>Black and White Print</td>
+    <td>Standard A4 Page</td>
+    <td>K1.50 /page</td>
+</tr>
+            </tr>
+            <tr>
+                <td>Full Color Print</td>
+                <td>High Quality A4</td>
+                <td>K4.00 /page</td>
+            </tr>
+            <tr>
+                <td>Photocopying</td>
+                <td>Sing/Double-sided</td>
+                <td>K1.00 /page</td>
+            </tr>
+            <tr>
+                <td>Document Scanning</td>
+                <td>PDF to Email/Flash Disk</td>
+                <td>K3.00 /Document</td>
+            </tr>
+            <tr>
+                <td>Binding and Cover</td>
+                <td>Comb/Binding</tD>
+                    <td>K15.00</td>
+            </tr>
+            <tr>
+                <td>Typing and Formatting</td>
+                <td>Assignments and Documents</td>
+                <td>K15.00 /page</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    </section>
+<!--Quick Contact / Order Section-->
+<section class="contact-section">
+    <!-- Interactive Price Estimator -->
+    <section class="card calculator-section">
+        <h2>Instant Print Estimator</h2>
+        <!-- Quick Submission Guidelines Note -->
+        <div class="file-tip-box">
+            💡 <strong>Quick Tip:</strong> Save files as <strong>PDF</strong> before sending to preserve your exact page formatting, fonts, and page count!
+        </div>
+        <p>Calculate your total before sending your order:</p>
+        
+        <div class="calc-box" <!-- Collection Method <a href="#" target="_blank" class="whatsapp-btn"><!-- Action Buttons -->
+        <div class="action-buttons" Understanding-bodyhtmlhead.html><div class="total-box">
+    <div>
+        <span>Total Estimated Cost:</span>
+        <strong id="total-price">K15.00</strong>
+    </div>
+    <!-- Savings Badge -->
+    <div id="discount-badge" class="discount-badge" style="display: none;">
+        🎉 Bulk Discount Applied (10% Off)!
+    </div>
+</div>
+            <a href="#" target="_blank" class="whatsapp-btn">📱 Send Order via WhatsApp</a>
+            <button type="button" class="copy-btn" onclick="copyOrderSummary()">📋 Copy Summary</button>
+        </div></a>
+         -->
+            <label>Collection Method:</label>
+
+            <div class="radio-row">
+                <input type="radio" id="pickup" name="collection" value="0" checked onchange="calculateTotal()">
+                <label for="pickup">Pickup at Room L134 (Free)</label>
+            </div>
+
+            <div class="radio-row">
+                <input type="radio" id="delivery" name="collection" value="5" onchange="calculateTotal()">
+                <label for="delivery">Campus Delivery (+K5.00)</label>
+                <!-- Express Order Option -->
+        <div class="checkbox-row express-row">
+            <input type="checkbox" id="express-order" onchange="calculateTotal()">
+            <label for="express-order">⚡ Express Processing (+K5.00) - Ready in 10 mins</label>
+        </div>
+            </div>>
+            <!-- Quick Action Preset Buttons -->
+            <label>Quick Presets:</label>
+            <div class="preset-buttons">
+                <button type="button" class="preset-btn" onclick="applyPreset('1.5', 40, false)">📄 10pg Assignment</button>
+                <button type="button" class="preset-btn" onclick="applyPreset('1.5', 50, true)">📚 50pg Project + Binding</button>
+                <button type="button" class="preset-btn" onclick="applyPreset('4.0', 20, false)">🎨 20pg Color Report</button>
+            </div>
+            <label>Select Service:</label>
+            <select id="service-type" onchange="calculateTotal()">
+                <option value="1.5">Black & White Print (K1.50/page)</option>
+                <option value="4.0">Full Color Print (K4.00/page)</option>
+                <option value="1.0">Photocopying (K1.00/page)</option>
+                <option value="3.0">Document Scanning (K3.00/doc)</option>
+                <option value="15.0">Typing & Formatting (K15.00/page)</option>
+            </select>
+
+            <label>Number of Pages:</label>
+            <input type="number" id="page-count" value="10" min="1" oninput="calculateTotal()">
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="add-binding" onchange="calculateTotal()">
+                <label for="add-binding">Add Comb Binding (+K15.00)</label>
+        
+        </div>
+    </section>
+
+    <!-- JavaScript logic for calculator -->
+    <script>
+        function calculateTotal() {
+            const rate = parseFloat(document.getElementById('service-type').value);
+            const pages = parseInt(document.getElementById('page-count').value) || 0;
+            const hasBinding = document.getElementById('add-binding').checked;
+            
+            let total = (rate * pages) + (hasBinding ? 15 : 0);
+            document.getElementById('total-price').innerText = 'K' + total.toFixed(2);
+            // Toast Notification Function
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.innerText = message;
+        toast.classList.add('show');
+        
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+
+    // Updated Copy Order Summary Function
+    function copyOrderSummary() {
+        const serviceSelect = document.getElementById('service-type');
+        const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+        const pages = parseInt(document.getElementById('page-count').value) || 0;
+        const hasBinding = document.getElementById('add-binding').checked;
+        const isDelivery = document.getElementById('delivery').checked;
+        const isExpress = document.getElementById('express-order').checked;
+        const totalPrice = document.getElementById('total-price').innerText;
+        const collectionText = isDelivery ? "Campus Delivery (+K5.00)" : "Pickup at Room L134";
+        const priorityText = isExpress ? "⚡ URGENT / EXPRESS" : "Standard";
+
+        const textToCopy = `Uncle Dommy Tech Order Summary:\n- Priority: ${priorityText}\n- Service: ${serviceName}\n- Pages: ${pages}\n- Binding: ${hasBinding ? 'Yes' : 'No'}\n- Collection: ${collectionText}\n- Total Estimate: ${totalPrice}`;
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            showToast('📋 Order summary copied to clipboard!');
+        }).catch(err => {
+            showToast('❌ Failed to copy details.');
+            console.error('Failed to copy: ', err);
+        });
+    }
+    // Detect Offline / Online Network Changes
+    window.addEventListener('offline', () => {
+        const netBanner = document.getElementById('network-status');
+        if (netBanner) {
+            netBanner.style.display = 'block';
+            netBanner.className = 'network-banner offline';
+            netBanner.innerText = '⚡ Connection lost. Calculator is still fully working offline!';
+        }
+    });
+
+    window.addEventListener('online', () => {
+        const netBanner = document.getElementById('network-status');
+        if (netBanner) {
+            netBanner.className = 'network-banner online';
+            netBanner.innerText = '✅ Back online!';
+            setTimeout(() => {
+                netBanner.style.display = 'none';
+            }, 3000);
+        }
+    });
+
+    // PWA Install Prompt Handler
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        const installBtn = document.getElementById('pwa-install-btn');
+        if (installBtn) installBtn.style.display = 'inline-block';
+    });
+
+    function triggerPwaInstall() {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    if (typeof showToast === "function") {
+                        showToast("🎉 Uncle Dommy Tech added to Home Screen!");
+                    }
+                }
+                deferredPrompt = null;
+                const installBtn = document.getElementById('pwa-install-btn');
+                if (installBtn) installBtn.style.display = 'none';
+            });
+        }
+    }
+    function calculateTotal() {
+            const serviceSelect = document.getElementById('service-type');
+            const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+            const rate = parseFloat(serviceSelect.value);
+            const pages = parseInt(document.getElementById('page-count').value) || 0;
+            const hasBinding = document.getElementById('add-binding').checked;
+            const isDelivery = document.getElementById('delivery').checked;
+            const isExpress = document.getElementById('express-order').checked;
+            
+            const deliveryFee = isDelivery ? 5 : 0;
+            const expressFee = isExpress ? 5 : 0;
+            
+            let total = (rate * pages) + (hasBinding ? 15 : 0) + deliveryFee + expressFee;
+            
+            // Update Price Text
+            const priceElement = document.getElementById('total-price');
+            priceElement.innerText = 'K' + total.toFixed(2);
+
+            // Trigger Pulse Glow Micro-Interaction on the Total Box
+            const totalBox = document.querySelector('.total-box');
+            if (totalBox) {
+                totalBox.classList.remove('pulse-glow');
+                void totalBox.offsetWidth; // Trigger reflow to restart animation
+                totalBox.classList.add('pulse-glow');
+            }
+
+            // Update WhatsApp URL
+            const phone = "260957951515";
+            const collectionText = isDelivery ? "Campus Delivery (+K5.00)" : "Pickup at Room L134";
+            const priorityText = isExpress ? "⚡ URGENT / EXPRESS" : "Standard";
+            const message = `Hi Uncle Dommy Tech! I would like to place an order:%0A- Priority: ${priorityText}%0A- Service: ${serviceName}%0A- Pages/Qty: ${pages}%0A- Binding: ${hasBinding ? 'Yes' : 'No'}%0A- Collection: ${collectionText}%0A- Total Estimate: K${total.toFixed(2)}`;
+            
+            targetWhatsAppUrl = `https://wa.me/${phone}?text=${message}`;
+        }
+        }
+    </script>
+    
+    <script>
+        function applyPreset(serviceValue, pageCount, bindingChecked) {
+        document.getElementById('service-type').value = serviceValue;
+        document.getElementById('page-count').value = pageCount;
+        document.getElementById('add-binding').checked = bindingChecked;
+        calculateTotal();
+    }
+    function calculateTotal() {
+        const serviceSelect = document.getElementById('service-type');
+        const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+        const rate = parseFloat(serviceSelect.value);
+        const pages = parseInt(document.getElementById('page-count').value) || 0;
+        const hasBinding = document.getElementById('add-binding').checked;
+        
+        let total = (rate * pages) + (hasBinding ? 15 : 0);
+        document.getElementById('total-price').innerText = 'K' + total.toFixed(2);
+
+        // Update WhatsApp button link dynamically
+        const whatsappBtn = document.querySelector('.whatsapp-btn');
+        const phone = "260957951515";
+        const message = `Hi Uncle Dommy Tech! I would like to place an order:%0A- Service: ${serviceName}%0A- Pages: ${pages}%0A- Binding: ${hasBinding ? 'Yes' : 'No'}%0A- Total Estimate: K${total.toFixed(2)}`;
+        
+        whatsappBtn.href = `https://wa.me/${phone}?text=${message}`;
+        // Show button when user scrolls down 200px
+    window.onscroll = function() {
+        const topBtn = document.getElementById('backToTopBtn');
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
+    };
+
+    // Smooth scroll back to top
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    function updateBusinessStatus() {
+        const now = new Date();
+        const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+        const hour = now.getHours();
+
+        const statusBadge = document.getElementById('business-status');
+        const statusDot = document.getElementById('status-dot');
+        const statusText = document.getElementById('status-text');
+
+        // Hours: Mon - Sat (1 to 6), 8:00 AM (8) to 8:00 PM (20)
+        const isOpenDay = day >= 1 && day <= 6;
+        const isOpenHour = hour >= 8 && hour < 20;
+
+        if (isOpenDay && isOpenHour) {
+            statusBadge.className = 'status-badge open';
+            statusDot.style.backgroundColor = '#22c55e';
+            statusText.innerText = '🟢 Open Now • Room L134 (8 AM - 8 PM)';
+        } else {
+            statusBadge.className = 'status-badge closed';
+            statusDot.style.backgroundColor = '#ef4444';
+            statusText.innerText = '🔴 Closed Now • Reopens Mon-Sat at 8:00 AM';
+        }
+    }
+
+    // Run status check immediately
+    updateBusinessStatus();
+    }
+
+    // Run once on load to ensure WhatsApp button link is ready
+    calculateTotal();
+    function filterServices() {
+        const input = document.getElementById('service-search');
+        const filter = input.value.toLowerCase();
+        const table = document.querySelector('.price-table');
+        const rows = table.getElementsByTagName('tr');
+
+        // Loop through all table rows (skipping the header row at index 0)
+        for (let i = 1; i < rows.length; i++) {
+            const cells = rows[i].getElementsByTagName('td');
+            if (cells.length > 0) {
+                const serviceName = cells[0].textContent || cells[0].innerText;
+                if (serviceName.toLowerCase().indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                    function calculateTotal() {
+        const serviceSelect = document.getElementById('service-type');
+        const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+        const rate = parseFloat(serviceSelect.value);
+        const pages = parseInt(document.getElementById('page-count').value) || 0;
+        const hasBinding = document.getElementById('add-binding').checked;
+        const isDelivery = document.getElementById('delivery').checked;
+        const isExpress = document.getElementById('express-order').checked;
+        
+        const deliveryFee = isDelivery ? 5 : 0;
+        const expressFee = isExpress ? 5 : 0;
+        
+        let total = (rate * pages) + (hasBinding ? 15 : 0) + deliveryFee + expressFee;
+        document.getElementById('total-price').innerText = 'K' + total.toFixed(2);
+
+        // Update WhatsApp button link dynamically
+        const whatsappBtn = document.querySelector('.whatsapp-btn');
+        const phone = "260957951515";
+        const collectionText = isDelivery ? "Campus Delivery (+K5.00)" : "Pickup at Room L134";
+        const priorityText = isExpress ? "⚡ URGENT / EXPRESS" : "Standard";
+
+        const message = `Hi Uncle Dommy Tech! I would like to place an order:%0A- Priority: ${priorityText}%0A- Service: ${serviceName}%0A- Pages: ${pages}%0A- Binding: ${hasBinding ? 'Yes' : 'No'}%0A- Collection: ${collectionText}%0A- Total Estimate: K${total.toFixed(2)}`;
+        
+        whatsappBtn.href = `https://wa.me/${phone}?text=${message}`;
+    }
+                }
+            }
+        }
+    }
+    function copyOrderSummary() {
+        const serviceSelect = document.getElementById('service-type');
+        const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+        const pages = parseInt(document.getElementById('page-count').value) || 0;
+        const hasBinding = document.getElementById('add-binding').checked;
+        const isDelivery = document.getElementById('delivery').checked;
+        const totalPrice = document.getElementById('total-price').innerText;
+        const collectionText = isDelivery ? "Campus Delivery (+K5.00)" : "Pickup at Room L134";
+
+        const textToCopy = `Uncle Dommy Tech Order Summary:\n- Service: ${serviceName}\n- Pages: ${pages}\n- Binding: ${hasBinding ? 'Yes' : 'No'}\n- Collection: ${collectionText}\n- Total Estimate: ${totalPrice}`;
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            alert('Order summary copied to clipboard!');
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+        function toggleTheme() {
+        const body = document.body;
+        const toggleBtn = document.getElementById('theme-toggle');
+        
+        body.classList.toggle('dark-theme');
+        
+        if (body.classList.contains('dark-theme')) {
+            toggleBtn.innerText = '☀️ Light Mode';
+            showToast('🌙 Dark Mode Enabled');
+        } else {
+            toggleBtn.innerText = '🌙 Dark Mode';
+            showToast('☀️ Light Mode Enabled');
+        }
+    }
+    let currentTestimonial = 0;
+
+    function showTestimonial(index) {
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        if (testimonials.length === 0) return;
+
+        if (index >= testimonials.length) currentTestimonial = 0;
+        else if (index < 0) currentTestimonial = testimonials.length - 1;
+        else currentTestimonial = index;
+
+        testimonials.forEach((card, i) => {
+            card.classList.toggle('active', i === currentTestimonial);
+        });
+    }
+
+    function nextTestimonial() {
+        showTestimonial(currentTestimonial + 1);
+    }
+
+    function prevTestimonial() {
+        showTestimonial(currentTestimonial - 1);
+    }
+    }
+</script>
+
+
+
+    <p> Send us your files directly via WhatsApp visit our OR visit our room L134</p>
+    <a href="https://wa.me"class="whatapp-btn"target="_blank"><a href="https://wa.me/260957951515?text=Hi%20Uncle%20Dommy%20Tech!%20I%20have%20a%20document%20to%20print." target="_blank" class="whatsapp-btn">
+    Order on WhatsApp
+</a></a>
+</section>
+<footer>
+ <p>&copy; 2027 Uncle Dommy Tech. All Rights Reserved.</p>>
+</footer>
+   
+
+
+
+<!-- Toast Notification Container -->
+    <div id="toast" class="toast"></div>
+    <!-- Pre-Submission File Checklist Modal -->
+    <div id="checklist-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeChecklist()">&times;</span>
+            <h3>📋 File Submission Checklist</h3>
+            <p class="modal-sub">Tick all boxes to ensure smooth printing:</p>
+            
+            <div class="checklist-items">
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Document is saved as a <strong>PDF file</strong>
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Page layout & numbering verified
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Correct page range selected in calculator
+                </label>
+            </div>
+
+      
+    <!-- Pre-Submission File Checklist Modal -->
+    <div id="checklist-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeChecklist()">&times;</span>
+            <h3>📋 Document Readiness Checklist</h3>
+            <p class="modal-sub">Verify these items before printing your document:</p>
+            
+            <div class="checklist-items">
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Document saved as a <strong>PDF file</strong> (prevents layout shift)
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Page layout, margins & page numbers checked
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Exact page count matches calculator selection
+                </label>
+            </div>
+
+            <button type="button" id="confirm-order-btn" class="modal-confirm-btn" disabled onclick="completeChecklist()">
+                ✅ Document Ready
+            </button>
+        </div>
+    </div>
+    </body>
+    <a href="javascript:void(0)" onclick="openChecklist()" class="whatsapp-btn">📱 Send Order via WhatsApp</a>
+
+
+
+
+</html>
+
+<style>
+    h1 {
+    color: rgb(162, 35, 35);
+    font-style: italic;
+    font-size: 100px;
+}
+h2 {
+    color:rgb(30, 15, 43);
+    font-size: 50px;
+}
+
+p {
+    color:rgb(62, 78, 38); 
+    font-size:20px;
+    
+}
+</style>
+<script>
+    function calculateTotal() {
+        const serviceSelect = document.getElementById('service-type');
+        const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+        const rate = parseFloat(serviceSelect.value);
+        const pages = parseInt(document.getElementById('page-count').value) || 0;
+        const hasBinding = document.getElementById('add-binding').checked;
+        const isDelivery = document.getElementById('delivery').checked;
+        const deliveryFee = isDelivery ? 5 : 0;
+        
+        let total = (rate * pages) + (hasBinding ? 15 : 0) + deliveryFee;
+        document.getElementById('total-price').innerText = 'K' + total.toFixed(2);
+
+        // Update WhatsApp button link dynamically
+        const whatsappBtn = document.querySelector('.whatsapp-btn');
+        const phone = "260957951515";
+        const collectionText = isDelivery ? "Campus Delivery (+K5.00)" : "Pickup at Room L134";
+        const message = `Hi Uncle Dommy Tech! I would like to place an order:%0A- Service: ${serviceName}%0A- Pages: ${pages}%0A- Binding: ${hasBinding ? 'Yes' : 'No'}%0A- Collection: ${collectionText}%0A- Total Estimate: K${total.toFixed(2)}`;
+        
+        whatsappBtn.href = `https://wa.me/${phone}?text=${message}`;
+    }
+
+    function applyPreset(serviceValue, pageCount, bindingChecked) {
+        document.getElementById('service-type').value = serviceValue;
+        document.getElementById('page-count').value = pageCount;
+        document.getElementById('add-binding').checked = bindingChecked;
+        calculateTotal();
+        let targetWhatsAppUrl = "";
+
+    function openChecklist() {
+        // Calculate latest total & URL first
+        calculateTotal();
+        const whatsappBtn = document.querySelector('.whatsapp-btn');
+        targetWhatsAppUrl = whatsappBtn.dataset.url || whatsappBtn.href;
+
+        document.getElementById('checklist-modal').style.display = 'flex';
+    }
+
+    function closeChecklist() {
+        document.getElementById('checklist-modal').style.display = 'none';
+    }
+
+    function validateChecklist() {
+        const checkboxes = document.querySelectorAll('.modal-check');
+        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+        const confirmBtn = document.getElementById('confirm-order-btn');
+        
+        confirmBtn.disabled = !allChecked;
+    }
+
+    function proceedToWhatsApp() {
+        if (targetWhatsAppUrl) {
+            window.open(targetWhatsAppUrl, '_blank');
+            closeChecklist();
+        }
+    }
+    function openChecklist() {
+        document.getElementById('checklist-modal').style.display = 'flex';
+    }
+
+    function closeChecklist() {
+        document.getElementById('checklist-modal').style.display = 'none';
+    }
+
+    function validateChecklist() {
+        const checkboxes = document.querySelectorAll('.modal-check');
+        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+        const confirmBtn = document.getElementById('confirm-order-btn');
+        
+        confirmBtn.disabled = !allChecked;
+    }
+
+    function completeChecklist() {
+        showToast('👍 Document verified and ready for printing!');
+        closeChecklist();
+    }
+    }
+
+    // Run once on load
+    calculateTotal();
+</script>
+<!-- FAQ / Help Section -->
+ <!-- Student Testimonials Section -->
+        <section class="card testimonials-section">
+            <h2>💬 What CBU Students Say</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-card active">
+                    <p class="quote">"Uncle Dommy Tech saved me during my final year project printing. fast, accurate, and delivered right to my hostel!"</p>
+                    <p class="author">— Chileshe M., School of Business</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"Super convenient pricing! Being able to estimate my printing total on WhatsApp before walking to L134 is a game changer."</p>
+                    <p class="author">— Mwansa K., Engineering Student</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"The comb binding quality is top tier and express orders are genuinely ready in minutes when you're rushing for class."</p>
+                    <p class="author">— Bwalya T., Natural Sciences</p>
+                </div>
+            </div>
+            <!-- Carousel Controls -->
+            <div class="testimonial-controls">
+                <button type="button" class="test-btn" onclick="prevTestimonial()">❮ Prev</button>
+                <button type="button" class="test-btn" onclick="nextTestimonial()">Next ❯</button>
+            </div>
+        </section>
+    <section class="card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        
+        <details>
+            <summary>How do I pay for my print order?</summary>
+            <p>You can pay via Airtel Money, MTN Mobile Money, or cash upon pickup/delivery at Room L134.</p>
+        </details>
+
+        <details>
+            <summary>How long will my printing take?</summary>
+            <p>Standard printing takes 5–15 minutes depending on queue size. Larger project bindings are typically ready within 30 minutes.</p>
+        </details>
+
+        <details>
+            <summary>What file formats do you accept?</summary>
+            <p>We prefer PDF files to maintain exact formatting, but we also accept Word (.docx), PowerPoint, and images.</p>
+        </details>
+    </section>
+    <!-- Operating Hours & Contact Info Section -->
+    <section class="card info-section">
+        <h2>Campus Location & Hours</h2>
+        
+        <div class="info-grid">
+            <div class="info-box">
+                <span class="info-icon">📍</span>
+                <div>
+                    <strong>Location</strong>
+                    <p>Room L134, CBU Campus</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <span class="info-icon">⏰</span>
+                <div>
+                    <strong>Working Hours</strong>
+                    <p>Mon - Sat: 08:00 AM - 09:00 PM</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <span class="info-icon">📞</span>
+                <div>
+                    <strong>Direct Line / WhatsApp</strong>
+                    <p>+260 957 951 515 or +260976218075</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncle Dommy Tech | Printing Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Network Connection Status Banner -->
+    <div id="network-status" class="network-banner" style="display: none;">
+        ⚡ You are currently offline. You can still calculate print estimates!
+    </div>
+
+    <!-- Floating Back to Top Button -->
+    <button type="button" id="backToTopBtn" onclick="scrollToTop()">⬆ Top</button>
+
+    <!-- Header / Navbar Section -->
+    <header class="card header-section">
+        <div class="logo-container">
+            <img src="logo.png.jpg" alt="Uncle Dommy Tech Logo" class="header-logo-only">
+        </div>
+        <p class="tagline">Fast, Reliable & Student-Friendly Printing Solutions — Room L134</p>
+        
+        <div class="header-controls">
+            <button type="button" id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+            <div id="business-status" class="status-badge">
+                <span id="status-dot" class="dot"></span>
+                <span id="status-text">Checking hours...</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Special Offerings Banner -->
+    <section class="offers-section card">
+        <h2>Special Campus Offers</h2>
+        <div class="offer-card">
+            <h3>Free Binding</h3>
+            <p>Get free spiral binding on all project prints over 100 pages.</p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="card how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Estimate & Send</h3>
+                <p>Use the estimator below to calculate your price, then tap the WhatsApp button to send your file.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>We Process</h3>
+                <p>We handle high-quality A4 printing, comb binding, or document formatting immediately.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Pick Up</h3>
+                <p>Collect your neat, ready document directly on campus at Room L134 or arrange delivery!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List Section -->
+    <section class="card pricing-section">
+        <h2>Pricing and Services</h2>
+        <div class="search-box" style="margin-bottom: 15px;">
+            <input type="text" id="service-search" class="search-input" placeholder="🔍 Search services (e.g. binding, color, scan)..." onkeyup="filterServices()">
+        </div>
+        <div class="table-responsive">
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Details</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Black and White Print</td>
+                        <td>Standard A4 Page</td>
+                        <td>K1.50 / page</td>
+                    </tr>
+                    <tr>
+                        <td>Full Color Print</td>
+                        <td>High Quality A4</td>
+                        <td>K4.00 / page</td>
+                    </tr>
+                    <tr>
+                        <td>Photocopying</td>
+                        <td>Single / Double-sided</td>
+                        <td>K1.00 / page</td>
+                    </tr>
+                    <tr>
+                        <td>Document Scanning</td>
+                        <td>PDF to Email / Flash Disk</td>
+                        <td>K3.00 / Document</td>
+                    </tr>
+                    <tr>
+                        <td>Binding and Cover</td>
+                        <td>Comb Binding</td>
+                        <td>K15.00</td>
+                    </tr>
+                    <tr>
+                        <td>Typing and Formatting</td>
+                        <td>Assignments and Documents</td>
+                        <td>K15.00 / page</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Quick Contact / Order Section -->
+    <section class="card contact-section">
+        <h2>Instant Print Estimator</h2>
+        <div class="file-tip-box">
+            💡 <strong>Quick Tip:</strong> Save files as <strong>PDF</strong> before sending to preserve your exact page formatting!
+        </div>
+        <p>Calculate your total before sending your order:</p>
+        
+        <!-- Collection Method -->
+        <label>Collection Method:</label>
+        <div class="radio-row">
+            <input type="radio" id="pickup" name="collection" value="0" checked onchange="calculateTotal()">
+            <label for="pickup">Pickup at Room L134 (Free)</label>
+        </div>
+
+        <div class="radio-row">
+            <input type="radio" id="delivery" name="collection" value="5" onchange="calculateTotal()">
+            <label for="delivery">Campus Delivery (+K5.00)</label>
+        </div>
+
+        <!-- Express Order Option -->
+        <div class="checkbox-row express-row" style="margin-top: 10px;">
+            <input type="checkbox" id="express-order" onchange="calculateTotal()">
+            <label for="express-order">⚡ Express Processing (+K5.00) - Ready in 10 mins</label>
+        </div>
+
+        <!-- Quick Action Preset Buttons -->
+        <label style="margin-top: 15px; display: block;">Quick Presets:</label>
+        <div class="preset-buttons">
+            <button type="button" class="preset-btn" onclick="applyPreset('1.5', 10, false)">📄 10pg Assignment</button>
+            <button type="button" class="preset-btn" onclick="applyPreset('1.5', 50, true)">📚 50pg Project + Binding</button>
+            <button type="button" class="preset-btn" onclick="applyPreset('4.0', 20, false)">🎨 20pg Color Report</button>
+        </div>
+
+        <label>Select Service:</label>
+        <select id="service-type" onchange="calculateTotal()">
+            <option value="1.5">Black & White Print (K1.50/page)</option>
+            <option value="4.0">Full Color Print (K4.00/page)</option>
+            <option value="1.0">Photocopying (K1.00/page)</option>
+            <option value="3.0">Document Scanning (K3.00/doc)</option>
+            <option value="15.0">Typing & Formatting (K15.00/page)</option>
+        </select>
+
+        <label>Number of Pages:</label>
+        <input type="number" id="page-count" value="10" min="1" oninput="calculateTotal()">
+
+        <div class="checkbox-row" style="margin-top: 10px;">
+            <input type="checkbox" id="add-binding" onchange="calculateTotal()">
+            <label for="add-binding">Add Comb Binding (+K15.00)</label>
+        </div>
+
+        <!-- Total Box & Actions -->
+        <div class="total-box" style="margin-top: 20px;">
+            <div>
+                <span>Total Estimated Cost:</span>
+                <strong id="total-price">K15.00</strong>
+            </div>
+            <div id="discount-badge" class="discount-badge" style="display: none;">
+                🎉 Bulk Discount Applied (10% Off)!
+            </div>
+        </div>
+
+        <div class="action-buttons" style="margin-top: 15px;">
+            <button type="button" class="whatsapp-btn" onclick="openChecklist()">📱 Send Order via WhatsApp</button>
+            <button type="button" class="copy-btn" onclick="copyOrderSummary()">📋 Copy Summary</button>
+        </div>
+    </section>
+
+    <!-- Student Testimonials Section -->
+    <section class="card testimonials-section">
+        <h2>💬 What CBU Students Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card active">
+                <p class="quote">"Uncle Dommy Tech saved me during my final year project printing. Fast, accurate, and delivered right to my hostel!"</p>
+                <p class="author">— Chileshe M., School of Business</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Super convenient pricing! Being able to estimate my printing total on WhatsApp before walking to L134 is a game changer."</p>
+                <p class="author">— Mwansa K., Engineering Student</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"The comb binding quality is top tier and express orders are genuinely ready in minutes when you're rushing for class."</p>
+                <p class="author">— Bwalya T., Natural Sciences</p>
+            </div>
+        </div>
+        <div class="testimonial-controls" style="margin-top: 10px;">
+            <button type="button" class="test-btn" onclick="prevTestimonial()">❮ Prev</button>
+            <button type="button" class="test-btn" onclick="nextTestimonial()">Next ❯</button>
+        </div>
+    </section>
+
+    <!-- FAQ / Help Section -->
+    <section class="card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        
+        <details>
+            <summary>How do I pay for my print order?</summary>
+            <p>You can pay via Airtel Money, MTN Mobile Money, or cash upon pickup/delivery at Room L134.</p>
+        </details>
+
+        <details>
+            <summary>How long will my printing take?</summary>
+            <p>Standard printing takes 5–15 minutes depending on queue size. Larger project bindings are typically ready within 30 minutes.</p>
+        </details>
+
+        <details>
+            <summary>What file formats do you accept?</summary>
+            <p>We prefer PDF files to maintain exact formatting, but we also accept Word (.docx), PowerPoint, and images.</p>
+        </details>
+    </section>
+
+    <!-- Operating Hours & Contact Info Section -->
+    <section class="card info-section">
+        <h2>Campus Location & Hours</h2>
+        <div class="info-grid">
+            <div class="info-box">
+                <span class="info-icon">📍</span>
+                <div>
+                    <strong>Location</strong>
+                    <p>Room L134, CBU Campus</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <span class="info-icon">⏰</span>
+                <div>
+                    <strong>Working Hours</strong>
+                    <p>Mon - Sat: 08:00 AM - 09:00 PM</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <span class="info-icon">📞</span>
+                <div>
+                    <strong>Direct Line / WhatsApp</strong>
+                    <p>+260 957 951 515 / +260 976 218 075</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2027 Uncle Dommy Tech. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Pre-Submission File Checklist Modal -->
+    <div id="checklist-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeChecklist()">&times;</span>
+            <h3>📋 Document Readiness Checklist</h3>
+            <p class="modal-sub">Verify these items before printing your document:</p>
+            
+            <div class="checklist-items">
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Document saved as a <strong>PDF file</strong> (prevents layout shift)
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Page layout, margins & page numbers checked
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Exact page count matches calculator selection
+                </label>
+            </div>
+
+            <button type="button" id="confirm-order-btn" class="modal-confirm-btn" disabled onclick="completeChecklist()">
+                ✅ Document Ready
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        let targetWhatsAppUrl = "";
+
+        function calculateTotal() {
+            const serviceSelect = document.getElementById('service-type');
+            const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+            const rate = parseFloat(serviceSelect.value);
+            const pages = parseInt(document.getElementById('page-count').value) || 0;
+            const hasBinding = document.getElementById('add-binding').checked;
+            const isDelivery = document.getElementById('delivery').checked;
+            const isExpress = document.getElementById('express-order').checked;
+            
+            const deliveryFee = isDelivery ? 5 : 0;
+            const expressFee = isExpress ? 5 : 0;
+            
+            let total = (rate * pages) + (hasBinding ? 15 : 0) + deliveryFee + expressFee;
+            document.getElementById('total-price').innerText = 'K' + total.toFixed(2);
+
+            // Update WhatsApp URL
+            const phone = "260957951515";
+            const collectionText = isDelivery ? "Campus Delivery (+K5.00)" : "Pickup at Room L134";
+            const priorityText = isExpress ? "⚡ URGENT / EXPRESS" : "Standard";
+            const message = `Hi Uncle Dommy Tech! I would like to place an order:%0A- Priority: ${priorityText}%0A- Service: ${serviceName}%0A- Pages: ${pages}%0A- Binding: ${hasBinding ? 'Yes' : 'No'}%0A- Collection: ${collectionText}%0A- Total Estimate: K${total.toFixed(2)}`;
+            
+            targetWhatsAppUrl = `https://wa.me/${phone}?text=${message}`;
+        }
+
+        function applyPreset(serviceValue, pageCount, bindingChecked) {
+            document.getElementById('service-type').value = serviceValue;
+            document.getElementById('page-count').value = pageCount;
+            document.getElementById('add-binding').checked = bindingChecked;
+            calculateTotal();
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function copyOrderSummary() {
+            const serviceSelect = document.getElementById('service-type');
+            const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+            const pages = parseInt(document.getElementById('page-count').value) || 0;
+            const hasBinding = document.getElementById('add-binding').checked;
+            const isDelivery = document.getElementById('delivery').checked;
+            const totalPrice = document.getElementById('total-price').innerText;
+            const collectionText = isDelivery ? "Campus Delivery (+K5.00)" : "Pickup at Room L134";
+
+            const textToCopy = `Uncle Dommy Tech Order Summary:\n- Service: ${serviceName}\n- Pages: ${pages}\n- Binding: ${hasBinding ? 'Yes' : 'No'}\n- Collection: ${collectionText}\n- Total Estimate: ${totalPrice}`;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast('📋 Order summary copied to clipboard!');
+            }).catch(err => {
+                showToast('❌ Failed to copy details.');
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        function openChecklist() {
+            calculateTotal();
+            document.getElementById('checklist-modal').style.display = 'flex';
+        }
+
+        function closeChecklist() {
+            document.getElementById('checklist-modal').style.display = 'none';
+        }
+
+        function validateChecklist() {
+            const checkboxes = document.querySelectorAll('.modal-check');
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+            const confirmBtn = document.getElementById('confirm-order-btn');
+            confirmBtn.disabled = !allChecked;
+        }
+
+        function completeChecklist() {
+            showToast('👍 Document verified! Redirecting to WhatsApp...');
+            closeChecklist();
+            if (targetWhatsAppUrl) {
+                window.open(targetWhatsAppUrl, '_blank');
+            }
+        }
+
+        function filterServices() {
+            const input = document.getElementById('service-search');
+            const filter = input.value.toLowerCase();
+            const table = document.querySelector('.price-table');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells.length > 0) {
+                    const serviceName = cells[0].textContent || cells[0].innerText;
+                    rows[i].style.display = serviceName.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+                }
+            }
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const toggleBtn = document.getElementById('theme-toggle');
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                toggleBtn.innerText = '☀️ Light Mode';
+                showToast('🌙 Dark Mode Enabled');
+            } else {
+                toggleBtn.innerText = '🌙 Dark Mode';
+                showToast('☀️ Light Mode Enabled');
+            }
+        }
+
+        // Testimonial Carousel
+        let currentTestimonial = 0;
+        function showTestimonial(index) {
+            const testimonials = document.querySelectorAll('.testimonial-card');
+            if (testimonials.length === 0) return;
+            if (index >= testimonials.length) currentTestimonial = 0;
+            else if (index < 0) currentTestimonial = testimonials.length - 1;
+            else currentTestimonial = index;
+
+            testimonials.forEach((card, i) => {
+                card.classList.toggle('active', i === currentTestimonial);
+            });
+        }
+        function nextTestimonial() { showTestimonial(currentTestimonial + 1); }
+        function prevTestimonial() { showTestimonial(currentTestimonial - 1); }
+
+        // Back to top & Business status
+        window.onscroll = function() {
+            const topBtn = document.getElementById('backToTopBtn');
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateBusinessStatus() {
+            const now = new Date();
+            const day = now.getDay();
+            const hour = now.getHours();
+            const statusBadge = document.getElementById('business-status');
+            const statusDot = document.getElementById('status-dot');
+            const statusText = document.getElementById('status-text');
+
+            const isOpenDay = day >= 1 && day <= 6;
+            const isOpenHour = hour >= 8 && hour < 21;
+
+            if (isOpenDay && isOpenHour) {
+                statusBadge.className = 'status-badge open';
+                statusDot.style.backgroundColor = '#22c55e';
+                statusText.innerText = '🟢 Open Now • Room L134 (8 AM - 9 PM)';
+            } else {
+                statusBadge.className = 'status-badge closed';
+                statusDot.style.backgroundColor = '#ef4444';
+                statusText.innerText = '🔴 Closed Now • Reopens Mon-Sat at 8:00 AM';
+            }
+        }
+
+        // Initialize on load
+        updateBusinessStatus();
+        calculateTotal();
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncle Dommy Tech | Printing Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Network Connection Status Banner -->
+    <div id="network-status" class="network-banner" style="display: none;">
+        ⚡ You are currently offline. You can still calculate print estimates!
+    </div>
+
+    <!-- Floating Back to Top Button -->
+    <button type="button" id="backToTopBtn" onclick="scrollToTop()">⬆ Top</button>
+
+    <!-- Header / Navbar Section -->
+    <header class="card header-section">
+        <div class="logo-container">
+            <img src="logo.png.jpg" alt="Uncle Dommy Tech Logo" class="header-logo-only">
+        </div>
+        <p class="tagline">Fast, Reliable & Student-Friendly Printing Solutions — Room L134</p>
+        
+        <div class="header-controls">
+            <button type="button" id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+            <div id="business-status" class="status-badge">
+                <span id="status-dot" class="dot"></span>
+                <span id="status-text">Checking hours...</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Special Offerings Banner -->
+    <section class="offers-section card">
+        <h2>Special Campus Offers</h2>
+        <div class="offer-card">
+            <h3>Free Binding</h3>
+            <p>Get free spiral binding on all project prints over 100 pages.</p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="card how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Estimate & Send</h3>
+                <p>Use the estimator below to calculate your price, then tap the WhatsApp button to send your file.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>We Process</h3>
+                <p>We handle high-quality A4 printing, comb binding, or document formatting immediately.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Pick Up</h3>
+                <p>Collect your neat, ready document directly on campus at Room L134 or arrange delivery!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List Section -->
+    <section class="card pricing-section">
+        <h2>Pricing and Services</h2>
+        <div class="search-box" style="margin-bottom: 15px;">
+            <input type="text" id="service-search" class="search-input" placeholder="🔍 Search services (e.g. binding, color, scan)..." onkeyup="filterServices()">
+        </div>
+        <div class="table-responsive">
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Details</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Black and White Print</td>
+                        <td>Standard A4 Page</td>
+                        <td>K1.50 / page</td>
+                    </tr>
+                    <tr>
+                        <td>Full Color Print</td>
+                        <td>High Quality A4</td>
+                        <td>K4.00 / page</td>
+                    </tr>
+                    <tr>
+                        <td>Photocopying</td>
+                        <td>Single / Double-sided</td>
+                        <td>K1.00 / page</td>
+                    </tr>
+                    <tr>
+                        <td>Document Scanning</td>
+                        <td>PDF to Email / Flash Disk</td>
+                        <td>K3.00 / Document</td>
+                    </tr>
+                    <tr>
+                        <td>Binding and Cover</td>
+                        <td>Comb Binding</td>
+                        <td>K15.00</td>
+                    </tr>
+                    <tr>
+                        <td>Typing and Formatting</td>
+                        <td>Assignments and Documents</td>
+                        <td>K15.00 / page</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Quick Contact / Order Section -->
+    <section class="card contact-section">
+        <h2>Instant Print Estimator</h2>
+        <div class="file-tip-box">
+            💡 <strong>Quick Tip:</strong> Save files as <strong>PDF</strong> before sending to preserve your exact page formatting!
+        </div>
+        <p>Calculate your total before sending your order:</p>
+        
+        <!-- Collection Method -->
+        <label>Collection Method:</label>
+        <div class="radio-row">
+            <input type="radio" id="pickup" name="collection" value="0" checked onchange="calculateTotal()">
+            <label for="pickup">Pickup at Room L134 (Free)</label>
+        </div>
+
+        <div class="radio-row">
+            <input type="radio" id="delivery" name="collection" value="5" onchange="calculateTotal()">
+            <label for="delivery">Campus Delivery (+K5.00)</label>
+        </div>
+
+        <!-- Express Order Option -->
+        <div class="checkbox-row express-row" style="margin-top: 10px;">
+            <input type="checkbox" id="express-order" onchange="calculateTotal()">
+            <label for="express-order">⚡ Express Processing (+K5.00) - Ready in 10 mins</label>
+        </div>
+
+        <!-- Quick Action Preset Buttons -->
+        <label style="margin-top: 15px; display: block;">Quick Presets:</label>
+        <div class="preset-buttons">
+            <button type="button" class="preset-btn" onclick="applyPreset('1.5', 10, false)">📄 10pg Assignment</button>
+            <button type="button" class="preset-btn" onclick="applyPreset('1.5', 50, true)">📚 50pg Project + Binding</button>
+            <button type="button" class="preset-btn" onclick="applyPreset('4.0', 20, false)">🎨 20pg Color Report</button>
+        </div>
+
+        <label>Select Service:</label>
+        <select id="service-type" onchange="calculateTotal()">
+            <option value="1.5">Black & White Print (K1.50/page)</option>
+            <option value="4.0">Full Color Print (K4.00/page)</option>
+            <option value="1.0">Photocopying (K1.00/page)</option>
+            <option value="3.0">Document Scanning (K3.00/doc)</option>
+            <option value="15.0">Typing & Formatting (K15.00/page)</option>
+        </select>
+
+        <label>Number of Pages:</label>
+        <input type="number" id="page-count" value="10" min="1" oninput="calculateTotal()">
+
+        <div class="checkbox-row" style="margin-top: 10px;">
+            <input type="checkbox" id="add-binding" onchange="calculateTotal()">
+            <label for="add-binding">Add Comb Binding (+K15.00)</label>
+        </div>
+
+        <!-- Total Box & Actions -->
+        <div class="total-box" style="margin-top: 20px;">
+            <div>
+                <span>Total Estimated Cost:</span>
+                <strong id="total-price">K15.00</strong>
+            </div>
+            <div id="discount-badge" class="discount-badge" style="display: none;">
+                🎉 Bulk Discount Applied (10% Off)!
+            </div>
+        </div>
+
+        <div class="action-buttons" style="margin-top: 15px;">
+            <button type="button" class="whatsapp-btn" onclick="openChecklist()">📱 Send Order via WhatsApp</button>
+            <button type="button" class="copy-btn" onclick="copyOrderSummary()">📋 Copy Summary</button>
+        </div>
+    </section>
+
+    <!-- Student Testimonials Section -->
+    <section class="card testimonials-section">
+        <h2>💬 What CBU Students Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card active">
+                <p class="quote">"Uncle Dommy Tech saved me during my final year project printing. Fast, accurate, and delivered right to my hostel!"</p>
+                <p class="author">— Chileshe M., School of Business</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Super convenient pricing! Being able to estimate my printing total on WhatsApp before walking to L134 is a game changer."</p>
+                <p class="author">— Mwansa K., Engineering Student</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"The comb binding quality is top tier and express orders are genuinely ready in minutes when you're rushing for class."</p>
+                <p class="author">— Bwalya T., Natural Sciences</p>
+            </div>
+        </div>
+        <div class="testimonial-controls" style="margin-top: 10px;">
+            <button type="button" class="test-btn" onclick="prevTestimonial()">❮ Prev</button>
+            <button type="button" class="test-btn" onclick="nextTestimonial()">Next ❯</button>
+        </div>
+    </section>
+
+    <!-- FAQ / Help Section -->
+    <section class="card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        
+        <details>
+            <summary>How do I pay for my print order?</summary>
+            <p>You can pay via Airtel Money, MTN Mobile Money, or cash upon pickup/delivery at Room L134.</p>
+        </details>
+
+        <details>
+            <summary>How long will my printing take?</summary>
+            <p>Standard printing takes 5–15 minutes depending on queue size. Larger project bindings are typically ready within 30 minutes.</p>
+        </details>
+
+        <details>
+            <summary>What file formats do you accept?</summary>
+            <p>We prefer PDF files to maintain exact formatting, but we also accept Word (.docx), PowerPoint, and images.</p>
+        </details>
+    </section>
+
+    <!-- Operating Hours & Contact Info Section -->
+    <section class="card info-section">
+        <h2>Campus Location & Hours</h2>
+        <div class="info-grid">
+            <div class="info-box">
+                <span class="info-icon">📍</span>
+                <div>
+                    <strong>Location</strong>
+                    <p>Room L134, CBU Campus</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <span class="info-icon">⏰</span>
+                <div>
+                    <strong>Working Hours</strong>
+                    <p>Mon - Sat: 08:00 AM - 09:00 PM</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <span class="info-icon">📞</span>
+                <div>
+                    <strong>Direct Line / WhatsApp</strong>
+                    <p>+260 957 951 515 / +260 976 218 075</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2027 Uncle Dommy Tech. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Pre-Submission File Checklist Modal -->
+    <div id="checklist-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeChecklist()">&times;</span>
+            <h3>📋 Document Readiness Checklist</h3>
+            <p class="modal-sub">Verify these items before printing your document:</p>
+            
+            <div class="checklist-items">
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Document saved as a <strong>PDF file</strong> (prevents layout shift)
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Page layout, margins & page numbers checked
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Exact page count matches calculator selection
+                </label>
+            </div>
+
+            <button type="button" id="confirm-order-btn" class="modal-confirm-btn" disabled onclick="completeChecklist()">
+                ✅ Document Ready
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        let targetWhatsAppUrl = "";
+
+        function calculateTotal() {
+            const serviceSelect = document.getElementById('service-type');
+            const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+            const rate = parseFloat(serviceSelect.value);
+            const pages = parseInt(document.getElementById('page-count').value) || 0;
+            const hasBinding = document.getElementById('add-binding').checked;
+            const isDelivery = document.getElementById('delivery').checked;
+            const isExpress = document.getElementById('express-order').checked;
+            
+            const deliveryFee = isDelivery ? 5 : 0;
+            const expressFee = isExpress ? 5 : 0;
+            
+            let total = (rate * pages) + (hasBinding ? 15 : 0) + deliveryFee + expressFee;
+            document.getElementById('total-price').innerText = 'K' + total.toFixed(2);
+
+            const phone = "260957951515";
+            const collectionText = isDelivery ? "Campus Delivery (+K5.00)" : "Pickup at Room L134";
+            const priorityText = isExpress ? "⚡ URGENT / EXPRESS" : "Standard";
+            const message = `Hi Uncle Dommy Tech! I would like to place an order:%0A- Priority: ${priorityText}%0A- Service: ${serviceName}%0A- Pages: ${pages}%0A- Binding: ${hasBinding ? 'Yes' : 'No'}%0A- Collection: ${collectionText}%0A- Total Estimate: K${total.toFixed(2)}`;
+            
+            targetWhatsAppUrl = `https://wa.me/${phone}?text=${message}`;
+        }
+
+        function applyPreset(serviceValue, pageCount, bindingChecked) {
+            document.getElementById('service-type').value = serviceValue;
+            document.getElementById('page-count').value = pageCount;
+            document.getElementById('add-binding').checked = bindingChecked;
+            calculateTotal();
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function copyOrderSummary() {
+            const serviceSelect = document.getElementById('service-type');
+            const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+            const pages = parseInt(document.getElementById('page-count').value) || 0;
+            const hasBinding = document.getElementById('add-binding').checked;
+            const isDelivery = document.getElementById('delivery').checked;
+            const totalPrice = document.getElementById('total-price').innerText;
+            const collectionText = isDelivery ? "Campus Delivery (+K5.00)" : "Pickup at Room L134";
+
+            const textToCopy = `Uncle Dommy Tech Order Summary:\n- Service: ${serviceName}\n- Pages: ${pages}\n- Binding: ${hasBinding ? 'Yes' : 'No'}\n- Collection: ${collectionText}\n- Total Estimate: ${totalPrice}`;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast('📋 Order summary copied to clipboard!');
+            }).catch(err => {
+                showToast('❌ Failed to copy details.');
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        function openChecklist() {
+            calculateTotal();
+            document.getElementById('checklist-modal').style.display = 'flex';
+        }
+
+        function closeChecklist() {
+            document.getElementById('checklist-modal').style.display = 'none';
+        }
+
+        function validateChecklist() {
+            const checkboxes = document.querySelectorAll('.modal-check');
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+            const confirmBtn = document.getElementById('confirm-order-btn');
+            confirmBtn.disabled = !allChecked;
+        }
+
+        function completeChecklist() {
+            showToast('👍 Document verified! Redirecting to WhatsApp...');
+            closeChecklist();
+            if (targetWhatsAppUrl) {
+                window.open(targetWhatsAppUrl, '_blank');
+            }
+        }
+
+        function filterServices() {
+            const input = document.getElementById('service-search');
+            const filter = input.value.toLowerCase();
+            const table = document.querySelector('.price-table');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells.length > 0) {
+                    const serviceName = cells[0].textContent || cells[0].innerText;
+                    rows[i].style.display = serviceName.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+                }
+            }
+            function submitFeedback(event) {
+        event.preventDefault();
+        const name = document.getElementById('student-name').value;
+        const rating = document.getElementById('student-rating').value;
+        const comment = document.getElementById('student-comment').value;
+
+        // Display success toast message
+        showToast(`🎉 Thank you, ${name}! Your review has been received.`);
+        
+        // Reset the form
+        document.getElementById('feedback-form').reset();
+    }
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const toggleBtn = document.getElementById('theme-toggle');
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                toggleBtn.innerText = '☀️ Light Mode';
+                showToast('🌙 Dark Mode Enabled');
+            } else {
+                toggleBtn.innerText = '🌙 Dark Mode';
+                showToast('☀️ Light Mode Enabled');
+            }
+        }
+
+        let currentTestimonial = 0;
+        function showTestimonial(index) {
+            const testimonials = document.querySelectorAll('.testimonial-card');
+            if (testimonials.length === 0) return;
+            if (index >= testimonials.length) currentTestimonial = 0;
+            else if (index < 0) currentTestimonial = testimonials.length - 1;
+            else currentTestimonial = index;
+
+            testimonials.forEach((card, i) => {
+                card.classList.toggle('active', i === currentTestimonial);
+            });
+        }
+        function nextTestimonial() { showTestimonial(currentTestimonial + 1); }
+        function prevTestimonial() { showTestimonial(currentTestimonial - 1); }
+
+        window.onscroll = function() {
+            const topBtn = document.getElementById('backToTopBtn');
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateBusinessStatus() {
+            const now = new Date();
+            const day = now.getDay();
+            const hour = now.getHours();
+            const statusBadge = document.getElementById('business-status');
+            const statusDot = document.getElementById('status-dot');
+            const statusText = document.getElementById('status-text');
+
+            const isOpenDay = day >= 1 && day <= 6;
+            const isOpenHour = hour >= 8 && hour < 21;
+
+            if (isOpenDay && isOpenHour) {
+                statusBadge.className = 'status-badge open';
+                statusDot.style.backgroundColor = '#22c55e';
+                statusText.innerText = '🟢 Open Now • Room L134 (8 AM - 9 PM)';
+            } else {
+                statusBadge.className = 'status-badge closed';
+                statusDot.style.backgroundColor = '#ef4444';
+                statusText.innerText = '🔴 Closed Now • Reopens Mon-Sat at 8:00 AM';
+            }
+        }
+
+        updateBusinessStatus();
+        calculateTotal();
+    </script>
+</body>
+</html>
+<!-- Student Feedback & Review Section -->
+    <section class="card feedback-section">
+        <h2>⭐ Leave a Review / Feedback</h2>
+        <p>Tell us about your printing experience at Room L134!</p>
+        
+        <form id="feedback-form" onsubmit="submitFeedback(event)">
+            <label for="student-name">Your Name / Department:</label>
+            <input type="text" id="student-name" placeholder="e.g. Chisanga M. (School of Business)" required style="width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #334155;">
+
+            <label for="student-rating">Rating:</label>
+            <select id="student-rating" style="width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #334155;">
+                <option value="5">⭐⭐⭐⭐⭐ (5/5 - Excellent & Fast)</option>
+                <option value="4">⭐⭐⭐⭐ (4/5 - Very Good)</option>
+                <option value="3">⭐⭐⭐ (3/5 - Good)</option>
+            </select>
+
+            <label for="student-comment">Your Review:</label>
+            <textarea id="student-comment" rows="3" placeholder="How was your print quality or delivery?" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #334155;"></textarea>
+
+            <button type="submit" class="whatsapp-btn" style="width: 100%; cursor: pointer;">📤 Submit Review</button>
+        </form>
+    </section>
+    <tr>
+                        <td>Document Laminating</td>
+                        <td>A4 Size / ID Card Protect</td>
+                        <td>K10.00 / piece</td>
+                    </tr>
+                    <option value="1.5">Black & White Print (K1.50/page)</option>
+            <option value="4.0">Full Color Print (K4.00/page)</option>
+            <option value="4.0">Photo Printing (K4.00/copy)</option>
+            <option value="1.0">Photocopying (K1.00/page)</option>
+            <option value="3.0">Document Scanning (K3.00/doc)</option>
+            <option value="10.0">Document Laminating (K10.00/pc)</option>
+            <option value="15.0">Typing & Formatting (K15.00/page)</option>
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncle Dommy Tech | Printing Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Network Connection Status Banner -->
+    <div id="network-status" class="network-banner" style="display: none;">
+        ⚡ You are currently offline. You can still calculate print estimates!
+    </div>
+
+    <!-- Floating Back to Top Button -->
+    <button type="button" id="backToTopBtn" onclick="scrollToTop()">⬆ Top</button>
+
+    <!-- Header / Navbar Section -->
+    <header class="card header-section">
+        <div class="logo-container">
+            <img src="logo.png.jpg" alt="Uncle Dommy Tech Logo" class="header-logo-only">
+        </div>
+        <p class="tagline">Fast, Reliable & Student-Friendly Printing Solutions — Room L134</p>
+        
+        <div class="header-controls">
+            <button type="button" id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+            <div id="business-status" class="status-badge">
+                <span id="status-dot" class="dot"></span>
+                <span id="status-text">Checking hours...</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Special Offerings Banner -->
+    <section class="offers-section card">
+        <h2>Special Campus Offers</h2>
+        <div class="offer-card">
+            <h3>Free Binding</h3>
+            <p>Get free spiral binding on all project prints over 100 pages.</p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="card how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Estimate & Send</h3>
+                <p>Use the estimator below to calculate your price, then tap the WhatsApp button to send your file.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>We Process</h3>
+                <p>We handle high-quality A4 printing, comb binding, or document formatting immediately.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Pick Up</h3>
+                <p>Collect your neat, ready document directly on campus at Room L134 or arrange delivery!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List Section -->
+    <section class="card pricing-section">
+        <h2>Pricing and Services</h2>
+        <div class="search-box" style="margin-bottom: 15px;">
+            <input type="text" id="service-search" class="search-input" placeholder="🔍 Search services (e.g. binding, color, scan)..." onkeyup="filterServices()">
+        </div>
+        <div class="table-responsive">
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Details</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Black and White Print</td>
+                        <td>Standard A4 Page</td>
+                        <td>K1.50 / page</td>
+                    </tr>
+                    <tr>
+                        <td>Full Color Print</td>
+                        <td>High Quality A4</td>
+                        <td>K4.00 / page</td>
+                    </tr>
+                    <tr>
+                        <td>Photo Printing</td>
+                        <td>Glossy / High-Res Picture</td>
+                        <td>K4.00 / copy</td>
+                    </tr>
+                    <tr>
+                        <td>Photocopying</td>
+                        <td>Single / Double-sided</td>
+                        <td>K1.00 / page</td>
+                    </tr>
+                    <tr>
+                        <td>Document Scanning</td>
+                        <td>PDF to Email / Flash Disk</td>
+                        <td>K3.00 / Document</td>
+                    </tr>
+                    <tr>
+                        <td>Document Laminating</td>
+                        <td>A4 Size / ID Card Protect</td>
+                        <td>K10.00 / piece</td>
+                    </tr>
+                    <tr>
+                        <td>Binding and Cover</td>
+                        <td>Comb Binding</td>
+                        <td>K15.00</td>
+                    </tr>
+                    <tr>
+                        <td>Typing and Formatting</td>
+                        <td>Assignments and Documents</td>
+                        <td>K15.00 / page</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Quick Contact / Order Section -->
+    <section class="card contact-section">
+        <h2>Instant Print Estimator</h2>
+        <div class="file-tip-box">
+            💡 <strong>Quick Tip:</strong> Save files as <strong>PDF</strong> before sending to preserve your exact page formatting!
+        </div>
+        <p>Calculate your total before sending your order:</p>
+        
+        <!-- Collection Method -->
+        <label>Collection Method:</label>
+        <div class="radio-row">
+            <input type="radio" id="pickup" name="collection" value="0" checked onchange="calculateTotal()">
+            <label for="pickup">Pickup at Room L134 (Free)</label>
+        </div>
+
+        <div class="radio-row">
+            <input type="radio" id="delivery" name="collection" value="5" onchange="calculateTotal()">
+            <label for="delivery">Campus Delivery (+K5.00)</label>
+        </div>
+
+        <!-- Express Order Option -->
+        <div class="checkbox-row express-row" style="margin-top: 10px;">
+            <input type="checkbox" id="express-order" onchange="calculateTotal()">
+            <label for="express-order">⚡ Express Processing (+K5.00) - Ready in 10 mins</label>
+        </div>
+
+        <!-- Quick Action Preset Buttons -->
+        <label style="margin-top: 15px; display: block;">Quick Presets:</label>
+        <div class="preset-buttons">
+            <button type="button" class="preset-btn" onclick="applyPreset('1.5', 10, false)">📄 10pg Assignment</button>
+            <button type="button" class="preset-btn" onclick="applyPreset('1.5', 50, true)">📚 50pg Project + Binding</button>
+            <button type="button" class="preset-btn" onclick="applyPreset('4.0', 20, false)">🎨 20pg Color Report</button>
+        </div>
+
+        <label>Select Service:</label>
+        <select id="service-type" onchange="calculateTotal()">
+            <option value="1.5">Black & White Print (K1.50/page)</option>
+            <option value="4.0">Full Color Print (K4.00/page)</option>
+            <option value="4.0">Photo Printing (K4.00/copy)</option>
+            <option value="1.0">Photocopying (K1.00/page)</option>
+            <option value="3.0">Document Scanning (K3.00/doc)</option>
+            <option value="10.0">Document Laminating (K10.00/pc)</option>
+            <option value="15.0">Typing & Formatting (K15.00/page)</option>
+        </select>
+
+        <label>Number of Pages / Quantity:</label>
+        <input type="number" id="page-count" value="10" min="1" oninput="calculateTotal()">
+
+        <div class="checkbox-row" style="margin-top: 10px;">
+            <input type="checkbox" id="add-binding" onchange="calculateTotal()">
+            <label for="add-binding">Add Comb Binding (+K15.00)</label>
+        </div>
+
+        <!-- Total Box & Actions -->
+        <div class="total-box" style="margin-top: 20px;">
+            <div>
+                <span>Total Estimated Cost:</span>
+                <strong id="total-price">K15.00</strong>
+            </div>
+            <div id="discount-badge" class="discount-badge" style="display: none;">
+                🎉 Bulk Discount Applied (10% Off)!
+            </div>
+        </div>
+
+        <div class="action-buttons" style="margin-top: 15px;">
+            <button type="button" class="whatsapp-btn" onclick="openChecklist()">📱 Send Order via WhatsApp</button>
+            <button type="button" class="copy-btn" onclick="copyOrderSummary()">📋 Copy Summary</button>
+        </div>
+    </section>
+
+    <!-- Student Testimonials Section -->
+    <section class="card testimonials-section">
+        <h2>💬 What CBU Students Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card active">
+                <p class="quote">"Uncle Dommy Tech saved me during my final year project printing. Fast, accurate, and delivered right to my hostel!"</p>
+                <p class="author">— Chileshe M., School of Business</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Super convenient pricing! Being able to estimate my printing total on WhatsApp before walking to L134 is a game changer."</p>
+                <p class="author">— Mwansa K., Engineering Student</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"The comb binding quality is top tier and express orders are genuinely ready in minutes when you're rushing for class."</p>
+                <p class="author">— Bwalya T., Natural Sciences</p>
+            </div>
+        </div>
+        <div class="testimonial-controls" style="margin-top: 10px;">
+            <button type="button" class="test-btn" onclick="prevTestimonial()">❮ Prev</button>
+            <button type="button" class="test-btn" onclick="nextTestimonial()">Next ❯</button>
+        </div>
+    </section>
+
+    <!-- Student Feedback & Review Section -->
+    <section class="card feedback-section">
+        <h2>⭐ Leave a Review / Feedback</h2>
+        <p>Tell us about your printing experience at Room L134!</p>
+        
+        <form id="feedback-form" onsubmit="submitFeedback(event)">
+            <label for="student-name">Your Name / Department:</label>
+            <input type="text" id="student-name" placeholder="e.g. Chisanga M. (School of Business)" required style="width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #334155;">
+
+            <label for="student-rating">Rating:</label>
+            <select id="student-rating" style="width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #334155;">
+                <option value="5">⭐⭐⭐⭐⭐ (5/5 - Excellent & Fast)</option>
+                <option value="4">⭐⭐⭐⭐ (4/5 - Very Good)</option>
+                <option value="3">⭐⭐⭐ (3/5 - Good)</option>
+            </select>
+
+            <label for="student-comment">Your Review:</label>
+            <textarea id="student-comment" rows="3" placeholder="How was your print quality or delivery?" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #334155;"></textarea>
+
+            <button type="submit" class="whatsapp-btn" style="width: 100%; cursor: pointer;">📤 Submit Review</button>
+        </form>
+    </section>
+
+    <!-- FAQ / Help Section -->
+    <section class="card faq-section">
+        <h2>Frequently Asked Questions</h2>
+        
+        <details>
+            <summary>How do I pay for my print order?</summary>
+            <p>You can pay via Airtel Money, MTN Mobile Money, or cash upon pickup/delivery at Room L134.</p>
+        </details>
+
+        <details>
+            <summary>How long will my printing take?</summary>
+            <p>Standard printing takes 5–15 minutes depending on queue size. Larger project bindings are typically ready within 30 minutes.</p>
+        </details>
+
+        <details>
+            <summary>What file formats do you accept?</summary>
+            <p>We prefer PDF files to maintain exact formatting, but we also accept Word (.docx), PowerPoint, and images.</p>
+        </details>
+    </section>
+
+    <!-- Operating Hours & Contact Info Section -->
+    <section class="card info-section">
+        <h2>Campus Location & Hours</h2>
+        <div class="info-grid">
+            <div class="info-box">
+                <span class="info-icon">📍</span>
+                <div>
+                    <strong>Location</strong>
+                    <p>Room L134, CBU Campus</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <span class="info-icon">⏰</span>
+                <div>
+                    <strong>Working Hours</strong>
+                    <p>Mon - Sat: 08:00 AM - 09:00 PM</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <span class="info-icon">📞</span>
+                <div>
+                    <strong>Direct Line / WhatsApp</strong>
+                    <p>+260 957 951 515 / +260 976 218 075</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2027 Uncle Dommy Tech. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Pre-Submission File Checklist Modal -->
+    <div id="checklist-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeChecklist()">&times;</span>
+            <h3>📋 Document Readiness Checklist</h3>
+            <p class="modal-sub">Verify these items before printing your document:</p>
+            
+            <div class="checklist-items">
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Document saved as a <strong>PDF file</strong> (prevents layout shift)
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Page layout, margins & page numbers checked
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" class="modal-check" onchange="validateChecklist()">
+                    Exact page count matches calculator selection
+                </label>
+            </div>
+
+            <button type="button" id="confirm-order-btn" class="modal-confirm-btn" disabled onclick="completeChecklist()">
+                ✅ Document Ready
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        let targetWhatsAppUrl = "";
+
+        function calculateTotal() {
+            const serviceSelect = document.getElementById('service-type');
+            const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+            const rate = parseFloat(serviceSelect.value);
+            const pages = parseInt(document.getElementById('page-count').value) || 0;
+            const hasBinding = document.getElementById('add-binding').checked;
+            const isDelivery = document.getElementById('delivery').checked;
+            const isExpress = document.getElementById('express-order').checked;
+            
+            const deliveryFee = isDelivery ? 5 : 0;
+            const expressFee = isExpress ? 5 : 0;
+            
+            let total = (rate * pages) + (hasBinding ? 15 : 0) + deliveryFee + expressFee;
+            document.getElementById('total-price').innerText = 'K' + total.toFixed(2);
+
+            const phone = "260957951515";
+            const collectionText = isDelivery ? "Campus Delivery (+K5.00)" : "Pickup at Room L134";
+            const priorityText = isExpress ? "⚡ URGENT / EXPRESS" : "Standard";
+            const message = `Hi Uncle Dommy Tech! I would like to place an order:%0A- Priority: ${priorityText}%0A- Service: ${serviceName}%0A- Pages/Qty: ${pages}%0A- Binding: ${hasBinding ? 'Yes' : 'No'}%0A- Collection: ${collectionText}%0A- Total Estimate: K${total.toFixed(2)}`;
+            
+            targetWhatsAppUrl = `https://wa.me/${phone}?text=${message}`;
+        }
+
+        function applyPreset(serviceValue, pageCount, bindingChecked) {
+            document.getElementById('service-type').value = serviceValue;
+            document.getElementById('page-count').value = pageCount;
+            document.getElementById('add-binding').checked = bindingChecked;
+            calculateTotal();
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function copyOrderSummary() {
+            const serviceSelect = document.getElementById('service-type');
+            const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+            const pages = parseInt(document.getElementById('page-count').value) || 0;
+            const hasBinding = document.getElementById('add-binding').checked;
+            const isDelivery = document.getElementById('delivery').checked;
+            const totalPrice = document.getElementById('total-price').innerText;
+            const collectionText = isDelivery ? "Campus Delivery (+K5.00)" : "Pickup at Room L134";
+
+            const textToCopy = `Uncle Dommy Tech Order Summary:\n- Service: ${serviceName}\n- Qty/Pages: ${pages}\n- Binding: ${hasBinding ? 'Yes' : 'No'}\n- Collection: ${collectionText}\n- Total Estimate: ${totalPrice}`;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast('📋 Order summary copied to clipboard!');
+            }).catch(err => {
+                showToast('❌ Failed to copy details.');
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        function openChecklist() {
+            calculateTotal();
+            document.getElementById('checklist-modal').style.display = 'flex';
+        }
+
+        function closeChecklist() {
+            document.getElementById('checklist-modal').style.display = 'none';
+        }
+
+        function validateChecklist() {
+            const checkboxes = document.querySelectorAll('.modal-check');
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+            const confirmBtn = document.getElementById('confirm-order-btn');
+            confirmBtn.disabled = !allChecked;
+        }
+
+        function completeChecklist() {
+            showToast('👍 Document verified! Redirecting to WhatsApp...');
+            closeChecklist();
+            if (targetWhatsAppUrl) {
+                window.open(targetWhatsAppUrl, '_blank');
+            }
+        }
+
+        function submitFeedback(event) {
+            event.preventDefault();
+            const name = document.getElementById('student-name').value;
+            showToast(`🎉 Thank you, ${name}! Your review has been received.`);
+            document.getElementById('feedback-form').reset();
+        }
+
+        function filterServices() {
+            const input = document.getElementById('service-search');
+            const filter = input.value.toLowerCase();
+            const table = document.querySelector('.price-table');
+            const rows = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                if (cells.length > 0) {
+                    const serviceName = cells[0].textContent || cells[0].innerText;
+                    rows[i].style.display = serviceName.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+                }
+            }
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const toggleBtn = document.getElementById('theme-toggle');
+            body.classList.toggle('dark-theme');
+            
+            if (body.classList.contains('dark-theme')) {
+                toggleBtn.innerText = '☀️ Light Mode';
+                showToast('🌙 Dark Mode Enabled');
+            } else {
+                toggleBtn.innerText = '🌙 Dark Mode';
+                showToast('☀️ Light Mode Enabled');
+            }
+        }
+
+        let currentTestimonial = 0;
+        function showTestimonial(index) {
+            const testimonials = document.querySelectorAll('.testimonial-card');
+            if (testimonials.length === 0) return;
+            if (index >= testimonials.length) currentTestimonial = 0;
+            else if (index < 0) currentTestimonial = testimonials.length - 1;
+            else currentTestimonial = index;
+
+            testimonials.forEach((card, i) => {
+                card.classList.toggle('active', i === currentTestimonial);
+            });
+        }
+        function nextTestimonial() { showTestimonial(currentTestimonial + 1); }
+        function prevTestimonial() { showTestimonial(currentTestimonial - 1); }
+
+        window.onscroll = function() {
+            const topBtn = document.getElementById('backToTopBtn');
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateBusinessStatus() {
+            const now = new Date();
+            const day = now.getDay();
+            const hour = now.getHours();
+            const statusBadge = document.getElementById('business-status');
+            const statusDot = document.getElementById('status-dot');
+            const statusText = document.getElementById('status-text');
+
+            const isOpenDay = day >= 1 && day <= 6;
+            const isOpenHour = hour >= 8 && hour < 21;
+
+            if (isOpenDay && isOpenHour) {
+                statusBadge.className = 'status-badge open';
+                statusDot.style.backgroundColor = '#22c55e';
+                statusText.innerText = '🟢 Open Now • Room L134 (8 AM - 9 PM)';
+            } else {
+                statusBadge.className = 'status-badge closed';
+                statusDot.style.backgroundColor = '#ef4444';
+                statusText.innerText = '🔴 Closed Now • Reopens Mon-Sat at 8:00 AM';
+            }
+        }
+
+        updateBusinessStatus();
+        calculateTotal();
+    </script>
+</body>
+</html>
+
+
+        
